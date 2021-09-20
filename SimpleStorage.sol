@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
 
+// I made this following FreeCodeCamp's smart contract course on YouTube (https://youtu.be/M576WGiDBdQ)
+
 pragma solidity ^0.6.0;
 
 contract SimpleStorage {
