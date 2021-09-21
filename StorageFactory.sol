@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: MIT
 
+// I made this following FreeCodeCamp's smart contract course on YouTube (https://youtu.be/M576WGiDBdQ)
+
 /* What I learned:
 * 1. How to deploy a contract from within a contract to testnet/mainnet
 * 2. How inheritance works with smart contracts
