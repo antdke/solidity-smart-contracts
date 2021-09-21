@@ -2,9 +2,11 @@
 
 // I made this following FreeCodeCamp's smart contract course on YouTube (https://youtu.be/M576WGiDBdQ)
 
-/* 
-*
-*
+/* What I learned:
+* 1. Solidity Basics (ie. data types, structs, etc.)
+* 2. How to use the Remix IDE
+* 3. How to deploy a contract (from Remix) to testnet/mainnet
+* 4. How to use Etherscan
 */
 
 pragma solidity ^0.6.0;
