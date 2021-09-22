@@ -2,6 +2,8 @@
 
 // I made this following FreeCodeCamp's smart contract course on YouTube (https://youtu.be/M576WGiDBdQ)
 
+// What it does: It's a contract that can create other contracts — Specifically, it creates and deploys SimpleStorage.sol contracts
+
 /* What I learned:
 * 1. How to deploy a contract from within a contract to testnet/mainnet
 * 2. How inheritance works with smart contracts
