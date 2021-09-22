@@ -2,6 +2,8 @@
 
 // I made this following FreeCodeCamp's smart contract course on YouTube (https://youtu.be/M576WGiDBdQ)
 
+// What it does: Allows you to store a number and a Person object
+
 /* What I learned:
 * 1. Solidity Basics (ie. data types, structs, etc.)
 * 2. How to use the Remix IDE
