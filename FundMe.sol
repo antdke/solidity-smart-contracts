@@ -54,7 +54,7 @@ contract FundMe {
     }
     
     // get version of the chainlink price feed aggregator
-    // makes a contract call to my contract using the AggregatorV3Interface
+    // makes a contract call from my contract to the AggregatorV3Interface contract
     function getVersion() public view returns (uint256) {
         AggregatorV3Interface priceFeed = AggregatorV3Interface(0x8A753747A1Fa494EC906cE90E9f37563A8AF630e);
         return priceFeed.version();
