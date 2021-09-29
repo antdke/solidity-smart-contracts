@@ -54,15 +54,24 @@ contract FundMe {
     }
     
     // get version of the chainlink price feed aggregator
-    // makes a contract call from my contract to the AggregatorV3Interface contract
+    // makes a contract call to my contract using the AggregatorV3Interface
     function getVersion() public view returns (uint256) {
         AggregatorV3Interface priceFeed = AggregatorV3Interface(0x8A753747A1Fa494EC906cE90E9f37563A8AF630e);
         return priceFeed.version();
     }
     
-    function description() public view returns (string memory) {
+    // get description of the priceFeed contract -- returns "ETH/USD"
+    function getDescription() public view returns (string memory) {
         AggregatorV3Interface priceFeed = AggregatorV3Interface(0x8A753747A1Fa494EC906cE90E9f37563A8AF630e);
         return priceFeed.description();
+    }
+    
+    // get current price of ETH/USD according to crypto oracles
+    function getPrice() public view returns (uint256) {
+        AggregatorV3Interface priceFeed = AggregatorV3Interface(0x8A753747A1Fa494EC906cE90E9f37563A8AF630e);
+        // latestRoundData returns 5 values, so we deconstruct it into 5 variables
+        (, int256 answer,,,) = priceFeed.latestRoundData();
+        return uint256(answer);
     }
     
 }
