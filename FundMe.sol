@@ -59,6 +59,7 @@ contract FundMe {
     }
     
     // convert wei we've been given into USD
+    // NOTE: to get the actual number, you have to move the decimal to the left 18 times.
     function getConversionRate(uint256 ethAmount) public view returns(uint256) {
         uint256 ethPrice = getPrice();
         uint256 ethAmountToUSD = (ethPrice * ethAmount) / 1000000000000000000;
