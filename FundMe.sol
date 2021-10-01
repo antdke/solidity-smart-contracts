@@ -23,7 +23,7 @@ contract FundMe {
     // a function that accepts payments
     function fund() public payable {
         // make $50 the min amount that someone can send this contract
-        uint256 minimumUSD = 50 * 10 ** 18;
+        uint256 minimumUSD = 0 * 10 ** 18;
         // if person doesn't send the min required $ then tx is cancelled and they get their money back
         require(getConversionRate(msg.value) >= minimumUSD, "You need to spend more ETH!");
         // if tx meets the min required amount then record who send it
@@ -56,6 +56,16 @@ contract FundMe {
         uint256 ethPrice = getPrice();
         uint256 ethAmountToUSD = (ethPrice * ethAmount) / 1000000000000000000;
         return ethAmountToUSD;
+    }
+    
+    // withdraws all of this contract's funds to whoever requests it
+    function withdraw() public payable {
+        msg.sender.transfer(address(this).balance);
+    }
+    
+    // see the amount of eth in the contract
+    function getBalance() public view returns(uint256){
+        return address(this).balance;
     }
     
 }
