@@ -20,6 +20,13 @@ contract FundMe {
     // to keep track of who funded us (storing addresses and total amount they've sent)
     mapping (address => uint256) public addressToAmountFunded;
     
+    address public owner;
+    
+    // the constructor is a function that gets called the instant the contract is deployed
+    constructor() public {
+        owner = msg.sender;
+    }
+    
     // a function that accepts payments
     function fund() public payable {
         // make $50 the min amount that someone can send this contract
@@ -60,6 +67,8 @@ contract FundMe {
     
     // withdraws all of this contract's funds to whoever requests it
     function withdraw() public payable {
+        // we only want the contract owner to be able to withdraw
+        require(msg.sender == owner, "INTRUDER ALERT: You are not the owner!");
         msg.sender.transfer(address(this).balance);
     }
     
